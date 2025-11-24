@@ -23,12 +23,13 @@ class Game:
         pyxel.tilemaps[0].blt(0, 0, 0, 0, 0, SCREEN_WIDTH, SCREEN_HEIGHT)
 
         self.player_start_position = [SCREEN_WIDTH / 2 - 8, SCREEN_HEIGHT / 5 * 4 + 8]
-        self.player = Player(self)
+        self.player = None
 
         self.scenes = {
             "play": PlayScene(self),
         }
         self.scene_name = "play"
+        self.change_scene(self.scene_name)
 
         pyxel.run(self.update, self.draw)
 
@@ -39,8 +40,8 @@ class Game:
 
     # ゲーム更新処理
     def update(self):
-        pass
+        self.scenes[self.scene_name].update()
 
     # ゲーム画面描画処理
     def draw(self):
-        self.player.draw()
+        self.scenes[self.scene_name].draw()

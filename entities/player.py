@@ -13,6 +13,7 @@ import pyxel
 from constants import SCREEN_WIDTH, SCREEN_HEIGHT
 
 class Player:
+    MOVE_SPEED = 3  # プレイヤーの移動速度
 
     ############################################################
     #                                                          #
@@ -23,20 +24,49 @@ class Player:
     #      2025/xx/xx   新規作成                                 #
     #                                                          #
     #        game:呼び出し元インスタンス                           #
+    #        dx:プレイヤーのx座標移動距離                          #
     #                                                          #
     #                                                          #
     ############################################################
     def __init__(self, game):
         self.game = game
+        self.x = game.player_start_position[0]
+        self.y = game.player_start_position[1]
+        self.dx = Player.MOVE_SPEED
 
 
+    ############################################################
+    #                                                          #
+    #  update                                                  #
+    #                                                          #
+    #    プレイヤー更新処理                                       #
+    #                                                          #
+    #      2025/xx/xx   新規作成                                 #
+    #                                                          #
+    #                                                          #
+    #                                                          #
+    #                                                          #
+    ############################################################
     def update(self):
-        pass
+        self.x += self.dx
 
+
+    ############################################################
+    #                                                          #
+    #  draw                                                    #
+    #                                                          #
+    #    プレイヤー描画処理                                       #
+    #                                                          #
+    #      2025/xx/xx   新規作成                                 #
+    #                                                          #
+    #                                                          #
+    #                                                          #
+    #                                                          #
+    ############################################################
     def draw(self):
         pyxel.blt(
-            self.game.player_start_position[0],
-            self.game.player_start_position[1],
+            self.x,
+            self.y,
             0,
             8,
             0,
