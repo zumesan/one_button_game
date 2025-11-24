@@ -12,4 +12,9 @@
 SCREEN_WIDTH = 240
 SCREEN_HEIGHT = 300
 
-RESOURCE_IMG_0 = 0  # リソースファイルのイメージ0ページ目
+#リソーsファイルイメージのページ番号
+RESOURCE_IMG_0 = 0
+RESOURCE_IMG_1 = 1
+
+SCENE_TITLE = "title"
+SCENE_PLAY = "play"
