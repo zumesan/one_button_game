@@ -9,7 +9,7 @@
 #                                                          #
 ############################################################
 import pyxel
-from constants import SCREEN_WIDTH, SCREEN_HEIGHT, RESOURCE_IMG_1
+from constants import SCREEN_WIDTH, SCREEN_HEIGHT, RESOURCE_IMG_1, SCENE_PLAY, PRESS_ENTER_KEY_TEXT
 
 class TitleScene:
 
@@ -40,7 +40,8 @@ class TitleScene:
     #                                                          #
     ############################################################
     def start(self):
-        pass
+        # 変数の初期化
+        self.game.player = None
 
 
     ############################################################
@@ -54,8 +55,10 @@ class TitleScene:
     #                                                          #
     ############################################################
     def update(self):
-        pass
+        game = self.game
 
+        if pyxel.btnp(pyxel.KEY_RETURN):
+            game.change_scene(SCENE_PLAY)
 
 
     ############################################################
@@ -78,4 +81,11 @@ class TitleScene:
             96,
             16,
             0
+        )
+
+        pyxel.text(
+            (SCREEN_WIDTH - 8) / 2 - (len(PRESS_ENTER_KEY_TEXT) * 3 / 2) - 8,
+            SCREEN_HEIGHT / 5 * 4,
+            PRESS_ENTER_KEY_TEXT,
+            7,
         )
