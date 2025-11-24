@@ -40,8 +40,10 @@ class TitleScene:
     #                                                          #
     ############################################################
     def start(self):
+        game = self.game
         # 変数の初期化
-        self.game.player = None
+        game.player = None
+        game.fall_objects = []
 
 
     ############################################################

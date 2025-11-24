@@ -11,7 +11,7 @@
 
 import pyxel
 from constants import SCREEN_WIDTH, SCREEN_HEIGHT
-from entities import Player
+from entities import FallObject, Player
 
 class PlayScene:
 
@@ -43,7 +43,7 @@ class PlayScene:
     ############################################################
     def start(self):
         # プレイ画面を初期化
-        pyxel.tilemaps[1].blt(0, 0, 0, 0, 0, SCREEN_WIDTH, SCREEN_HEIGHT)
+        pyxel.tilemaps[0].blt(0, 0, 0, 0, 0, SCREEN_WIDTH, SCREEN_HEIGHT)
 
         # プレイヤー初期化
         self.game.player = Player(self.game)
@@ -63,7 +63,11 @@ class PlayScene:
     #                                                          #
     ############################################################
     def update(self):
-        self.game.player.update()
+        game = self.game
+        game.player.update()
+
+        # 落下物のインスタンスを生成
+        FallObject(game)
 
 
     ############################################################
@@ -84,3 +88,6 @@ class PlayScene:
         pyxel.cls(0)
 
         self.game.player.draw()
+
+        for fall in self.game.fall_objects.copy():
+            fall.draw()

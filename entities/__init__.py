@@ -8,5 +8,5 @@
 #                                                          #
 #                                                          #
 ############################################################
-
+from .fall_object import FallObject
 from .player import Player

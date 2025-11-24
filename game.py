@@ -36,6 +36,7 @@ class Game:
 
         self.player_start_position = [SCREEN_WIDTH / 2 - 8, SCREEN_HEIGHT / 5 * 4 + 8] # プレイヤーの初期位置
         self.player = None
+        self.fall_objects = []
 
         self.scenes = {
             SCENE_TITLE: TitleScene(self),

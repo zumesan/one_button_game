@@ -11,6 +11,8 @@
 
 import pyxel
 
+from constants import RESOURCE_IMG_0
+
 class FallObject:
 
     ############################################################
@@ -27,6 +29,10 @@ class FallObject:
     ############################################################
     def __init__(self, game):
         self.game = game
+        self.x = 120
+        self.y = 16
+
+        self.game.fall_objects.append(self)
 
 
     ############################################################
@@ -54,4 +60,13 @@ class FallObject:
     #                                                          #
     ############################################################
     def draw(self):
-        pass
+        pyxel.blt(
+            self.x,
+            self.y,
+            RESOURCE_IMG_0,
+            0,
+            16,
+            16,
+            16,
+            1,
+        )
