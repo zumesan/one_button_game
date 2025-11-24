@@ -26,7 +26,7 @@ class Game:
     #    ゲーム初期化処理                                         #
     #                                                          #
     #                                                          #
-    #      2025/xx/xx   新規作成                                 #
+    #          2025/xx/xx   新規作成                            #
     #                                                          #
     #                                                          #
     ############################################################
@@ -35,12 +35,13 @@ class Game:
         pyxel.load("assets/one_button_game.pyxres")
         pyxel.tilemaps[0].blt(0, 0, 0, 0, 0, SCREEN_WIDTH, SCREEN_HEIGHT)
 
-        self.player_start_position = [SCREEN_WIDTH / 2 - 8, SCREEN_HEIGHT / 5 * 4 + 8]
+        self.player_start_position = [SCREEN_WIDTH / 2 - 8, SCREEN_HEIGHT / 5 * 4 + 8] # プレイヤーの初期位置
         self.player = None
 
         self.scenes = {
             "play": PlayScene(self),
         }
+
         self.scene_name = "play"
         self.change_scene(self.scene_name)
 
@@ -54,7 +55,7 @@ class Game:
     #    ゲームシーン遷移処理                                     #
     #                                                          #
     #                                                          #
-    #      2025/xx/xx   新規作成                                 #
+    #          2025/xx/xx   新規作成                            #
     #                                                          #
     #                                                          #
     ############################################################
@@ -72,7 +73,7 @@ class Game:
     #      内容:現在のゲームシーンの更新処理呼び出し                  #
     #                                                          #
     #                                                          #
-    #      2025/xx/xx   新規作成                                 #
+    #          2025/xx/xx   新規作成                            #
     #                                                          #
     #                                                          #
     ############################################################
@@ -89,7 +90,7 @@ class Game:
     #      内容:現在のゲームシーンの描画処理呼び出し                  #
     #                                                          #
     #                                                          #
-    #      2025/xx/xx   新規作成                                 #
+    #          2025/xx/xx   新規作成                            #
     #                                                          #
     #                                                          #
     ############################################################
