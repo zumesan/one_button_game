@@ -10,7 +10,7 @@
 ############################################################
 
 import pyxel
-from constants import SCREEN_WIDTH, SCREEN_HEIGHT
+from constants import SCREEN_WIDTH, SCREEN_HEIGHT, RESOURCE_IMG_0
 
 class Player:
     MOVE_SPEED = 3  # プレイヤーの移動速度
@@ -53,8 +53,15 @@ class Player:
             # 移動方向を変更
             self.direction *= -1
             self.dx = Player.MOVE_SPEED * self.direction
-            
+
+        # プレイヤー移動    
         self.x += self.dx
+
+        # 画面の外に出た場合、反対側に移動させる
+        if self.x < -8:
+            self.x = pyxel.width - 8
+        if self.x > pyxel.width - 8:
+            self.x = -8
 
 
     ############################################################
@@ -71,7 +78,7 @@ class Player:
         pyxel.blt(
             self.x,
             self.y,
-            0,
+            RESOURCE_IMG_0,
             8,
             0,
             16,

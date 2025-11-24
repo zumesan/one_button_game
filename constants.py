@@ -12,3 +12,4 @@
 SCREEN_WIDTH = 240
 SCREEN_HEIGHT = 300
 
+RESOURCE_IMG_0 = 0  # リソースファイルのイメージ0ページ目
