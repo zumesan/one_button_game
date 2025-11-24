@@ -81,7 +81,7 @@ class Player:
             RESOURCE_IMG_0,
             8,
             0,
-            16,
+            16 * self.direction,
             16,
             1,
         )
