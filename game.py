@@ -43,6 +43,8 @@ class Game:
             SCENE_PLAY: PlayScene(self),
         }
 
+        self.play_time = 0  # ゲームのプレイ時間
+
         self.scene_name = SCENE_TITLE
         self.change_scene(self.scene_name)
 

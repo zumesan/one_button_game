@@ -66,6 +66,9 @@ class PlayScene:
         game = self.game
         game.player.update()
 
+        # プレイ時間カウントアップ
+        game.play_time += 1
+
         # 落下物のインスタンスを生成
         FallObject(game)
 
@@ -89,5 +92,14 @@ class PlayScene:
 
         self.game.player.draw()
 
-        for fall in self.game.fall_objects.copy():
+        for fall in self.game.fall_objects:
             fall.draw()
+
+# debug
+        pyxel.text(
+            8,
+            8,
+            str(int(self.game.play_time / 30)),
+            10
+        )
+# debug
