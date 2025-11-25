@@ -71,7 +71,7 @@ class PlayScene:
 
         if game.play_time % 50 == 0:
             # 落下物のインスタンスを生成
-            FallObject(game)
+            FallObject(game, pyxel.rndi(0, pyxel.width - 8))
 
 
     ############################################################

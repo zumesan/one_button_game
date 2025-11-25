@@ -27,9 +27,9 @@ class FallObject:
     #                                                          #
     #                                                          #
     ############################################################
-    def __init__(self, game):
+    def __init__(self, game, x):
         self.game = game
-        self.x = 120
+        self.x = x
         self.y = 16
 
         self.game.fall_objects.append(self)
