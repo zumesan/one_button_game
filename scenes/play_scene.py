@@ -66,6 +66,9 @@ class PlayScene:
         game = self.game
         game.player.update()
 
+        for fall in game.fall_objects.copy():
+            fall.update()
+
         # プレイ時間カウントアップ
         game.play_time += 1
 
