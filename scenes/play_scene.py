@@ -69,8 +69,9 @@ class PlayScene:
         # プレイ時間カウントアップ
         game.play_time += 1
 
-        # 落下物のインスタンスを生成
-        FallObject(game)
+        if game.play_time % 50 == 0:
+            # 落下物のインスタンスを生成
+            FallObject(game)
 
 
     ############################################################
@@ -99,7 +100,7 @@ class PlayScene:
         pyxel.text(
             8,
             8,
-            str(int(self.game.play_time / 30)),
+            str(int(self.game.play_time)),
             10
         )
 # debug
