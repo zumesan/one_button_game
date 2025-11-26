@@ -34,6 +34,7 @@ class Player:
         self.y = game.player_start_position[1]
         self.dx = -Player.MOVE_SPEED
         self.direction = -1 # 移動方向(-1:左方向、1:右方向)
+        self.hit_area = (1, 1, 14, 14)  # 当たり判定エリア
 
 
     ############################################################

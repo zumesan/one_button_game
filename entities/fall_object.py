@@ -31,6 +31,7 @@ class FallObject:
         self.game = game
         self.x = x
         self.y = 16
+        self.hit_area = (3, 1, 10, 14)  # 当たり判定エリア
 
         self.game.fall_objects.append(self)
 
