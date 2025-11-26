@@ -31,6 +31,7 @@ class FallObject:
         self.game = game
         self.x = x
         self.y = 16
+        self.fall_speed = game.fall_speed
         self.hit_area = (3, 1, 10, 14)  # 当たり判定エリア
 
         self.game.fall_objects.append(self)
@@ -47,7 +48,13 @@ class FallObject:
     #                                                          #
     ############################################################
     def update(self):
-        self.y += 10
+        self.y += min(self.fall_speed * 1.4, 14)
+
+        # 落下物が画面外に出た?
+        if self.y >= pyxel.height - 16:
+            # 落下物がリストに存在する場合、リストから削除
+            if self in self.game.fall_objects:
+                self.game.fall_objects.remove(self)
 
 
     ############################################################

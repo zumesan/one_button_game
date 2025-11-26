@@ -11,6 +11,7 @@
 
 SCREEN_WIDTH = 240
 SCREEN_HEIGHT = 300
+SEC_FPS = 30    # 1秒のフレーム数
 
 #リソーsファイルイメージのページ番号
 RESOURCE_IMG_0 = 0

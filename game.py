@@ -24,7 +24,6 @@ class Game:
     #                                                          #
     #    ゲーム初期化処理                                         #
     #                                                          #
-    #                                                          #
     #          2025/xx/xx   新規作成                            #
     #                                                          #
     #                                                          #
@@ -45,6 +44,7 @@ class Game:
         }
 
         self.play_time = 0  # ゲームのプレイ時間
+        self.fall_speed = 1  # オブジェクトの落下速度
 
         self.scene_name = SCENE_TITLE
         self.change_scene(self.scene_name)

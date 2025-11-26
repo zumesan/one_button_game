@@ -10,7 +10,7 @@
 ############################################################
 
 import pyxel
-from constants import SCREEN_WIDTH, SCREEN_HEIGHT, SCENE_GAME_OVER
+from constants import SCREEN_WIDTH, SCREEN_HEIGHT, SCENE_GAME_OVER, SEC_FPS
 from collision import check_collision
 from entities import FallObject, Player
 
@@ -45,9 +45,12 @@ class PlayScene:
     def start(self):
         # プレイ画面を初期化
         pyxel.tilemaps[0].blt(0, 0, 0, 0, 0, SCREEN_WIDTH, SCREEN_HEIGHT)
-
+        
         # プレイヤー初期化
         self.game.player = Player(self.game)
+
+        # 経過時間ごとの難易度初期化
+        self.game.fall_speed = 1
 
 
     ############################################################
@@ -67,8 +70,13 @@ class PlayScene:
         game = self.game
         game.player.update()
 
+        # 10秒経過?
+        if game.play_time % (SEC_FPS * 10) == 0:
+            # オブジェクトの落下速度を上げる
+            game.fall_speed += 1
+
         # 設定したインターバル分経過?
-        if game.play_time % 10 == 0:
+        if game.play_time % 30 == 0:
             # 落下物のインスタンスを生成
             FallObject(game, pyxel.rndi(0, pyxel.width - 16))
 
