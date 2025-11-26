@@ -10,3 +10,4 @@
 ############################################################
 from .title_scene import TitleScene
 from .play_scene import PlayScene
+from .game_over import GameOverScene

@@ -74,6 +74,7 @@ class TitleScene:
     #                                                          #
     ############################################################
     def draw(self):
+        """        
         pyxel.blt(
             (SCREEN_WIDTH - 8) / 2 - 48,
             SCREEN_HEIGHT / 5,
@@ -84,7 +85,7 @@ class TitleScene:
             16,
             0
         )
-
+        """
         pyxel.text(
             (SCREEN_WIDTH - 8) / 2 - (len(PRESS_ENTER_KEY_TEXT) * 3 / 2) - 8,
             SCREEN_HEIGHT / 5 * 4,

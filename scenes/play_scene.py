@@ -10,7 +10,8 @@
 ############################################################
 
 import pyxel
-from constants import SCREEN_WIDTH, SCREEN_HEIGHT
+from constants import SCREEN_WIDTH, SCREEN_HEIGHT, SCENE_GAME_OVER
+from collision import check_collision
 from entities import FallObject, Player
 
 class PlayScene:
@@ -66,12 +67,19 @@ class PlayScene:
         game = self.game
         game.player.update()
 
-        if game.play_time % 50 == 0:
+        # 設定したインターバル分経過?
+        if game.play_time % 10 == 0:
             # 落下物のインスタンスを生成
             FallObject(game, pyxel.rndi(0, pyxel.width - 16))
 
         for fall in game.fall_objects.copy():
             fall.update()
+
+            # 落下物オブジェクトとプレイヤーが衝突?
+            if check_collision(game.player, fall):
+                # ゲームオーバー画面に遷移
+                game.change_scene(SCENE_GAME_OVER)
+                break
 
         # プレイ時間カウントアップ
         game.play_time += 1
