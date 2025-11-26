@@ -33,8 +33,17 @@ class FallObject:
         self.x = x
         self.y = 16
         self.fall_speed = game.fall_speed
-        self.hit_area = (3, 1, 10, 14)  # 当たり判定エリア
         self.kind = kind
+
+        # 種類に応じた判定エリアを設定する
+        if self.kind == KIND_FLOWER:
+            self.hit_area = (2, 1, 12, 14)
+        if self.kind == KIND_KNIFE:
+            self.hit_area = (3, 1, 10, 14)
+        if self.kind == KIND_HAMMER:
+            self.hit_area = (1, 1, 14, 14)
+        if self.kind == KIND_AXE:
+            self.hit_area = (1, 1, 14, 14)
 
         self.game.fall_objects.append(self)
 
@@ -50,8 +59,15 @@ class FallObject:
     #                                                          #
     ############################################################
     def update(self):
-
-        self.y += min(self.fall_speed * 1.4, 14)
+        
+        if self.kind == KIND_FLOWER:
+            self.y += min(self.fall_speed * 1.4, 14)
+        if self.kind == KIND_KNIFE:
+            self.y += min(self.fall_speed * 1.6, 16)
+        if self.kind == KIND_HAMMER:
+            self.y += min(self.fall_speed * 1.8, 18)
+        if self.kind == KIND_AXE:
+            self.y += min(self.fall_speed * 2.0, 20)
 
         # 落下物が画面外に出た?
         if self.y >= pyxel.height - 16:
