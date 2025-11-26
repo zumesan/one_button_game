@@ -78,7 +78,7 @@ class PlayScene:
         # 設定したインターバル分経過?
         if game.play_time % 30 == 0:
             # 落下物のインスタンスを生成
-            FallObject(game, pyxel.rndi(0, pyxel.width - 16))
+            FallObject(game, pyxel.rndi(0, pyxel.width - 16), pyxel.rndi(0, 3))
 
         for fall in game.fall_objects.copy():
             fall.update()
