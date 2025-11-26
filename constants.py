@@ -17,6 +17,12 @@ SEC_FPS = 30    # 1秒のフレーム数
 RESOURCE_IMG_0 = 0
 RESOURCE_IMG_1 = 1
 
+# 落下物の種類
+KIND_FLOWER = 0
+KIND_KNIFE = 1
+KIND_HAMMER = 2
+KIND_AXE = 3
+
 SCENE_TITLE = "title"
 SCENE_PLAY = "play"
 SCENE_GAME_OVER = "gameover"
