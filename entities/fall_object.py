@@ -61,13 +61,13 @@ class FallObject:
     def update(self):
         
         if self.kind == KIND_FLOWER:
-            self.y += min(self.fall_speed * 1.4, 14)
+            self.y += min(self.fall_speed * 1.4, 24)
         if self.kind == KIND_KNIFE:
-            self.y += min(self.fall_speed * 1.6, 16)
+            self.y += min(self.fall_speed * 1.6, 26)
         if self.kind == KIND_HAMMER:
-            self.y += min(self.fall_speed * 1.8, 18)
+            self.y += min(self.fall_speed * 1.8, 28)
         if self.kind == KIND_AXE:
-            self.y += min(self.fall_speed * 2.0, 20)
+            self.y += min(self.fall_speed * 2.0, 30)
 
         # 落下物が画面外に出た?
         if self.y >= pyxel.height - 16:
