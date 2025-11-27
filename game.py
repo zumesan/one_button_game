@@ -43,7 +43,8 @@ class Game:
             SCENE_GAME_OVER: GameOverScene(self),
         }
 
-        self.play_time = 0  # ゲームのプレイ時間
+        self.play_time = 0   # ゲームのプレイ時間
+        self.level = 0       # ゲームの難易度
         self.fall_speed = 1  # オブジェクトの落下速度
 
         self.scene_name = SCENE_TITLE

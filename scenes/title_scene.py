@@ -59,7 +59,18 @@ class TitleScene:
     def update(self):
         game = self.game
 
+        if pyxel.btnp(pyxel.KEY_SPACE):
+            game.level += 1
+
+            # 難易度設定が5を超える?
+            if game.level > 4:
+                game.level = 0
+            # 難易度設定が1を下回る?
+            if game.level < 0:
+                game.level = 4
+
         if pyxel.btnp(pyxel.KEY_RETURN):
+            game.level += 1
             game.change_scene(SCENE_PLAY)
 
 
@@ -74,6 +85,7 @@ class TitleScene:
     #                                                          #
     ############################################################
     def draw(self):
+        pyxel.cls(0)
         """        
         pyxel.blt(
             (SCREEN_WIDTH - 8) / 2 - 48,
@@ -86,6 +98,19 @@ class TitleScene:
             0
         )
         """
+
+        # 選択難易度表示
+        pyxel.blt(
+            (SCREEN_WIDTH - 8) / 2 - 16,
+            SCREEN_HEIGHT / 5 * 3,
+            RESOURCE_IMG_1,
+            0,
+            self.game.level * 8 + 32,
+            32,
+            8,
+            0
+        )
+
         pyxel.text(
             (SCREEN_WIDTH - 8) / 2 - (len(PRESS_ENTER_KEY_TEXT) * 3 / 2) - 8,
             SCREEN_HEIGHT / 5 * 4,
