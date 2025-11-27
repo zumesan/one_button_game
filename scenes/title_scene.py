@@ -43,7 +43,10 @@ class TitleScene:
         game = self.game
         # 変数の初期化
         game.player = None
-        game.fall_objects = []
+        game.fall_objects = [] 
+
+        game.play_time = 0
+        game.level = 0
 
 
     ############################################################
@@ -70,7 +73,6 @@ class TitleScene:
                 game.level = 4
 
         if pyxel.btnp(pyxel.KEY_RETURN):
-            game.level += 1
             game.change_scene(SCENE_PLAY)
 
 

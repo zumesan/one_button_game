@@ -73,16 +73,13 @@ class PlayScene:
         # プレイ時間カウントアップ
         game.play_time += 1
 
-        # 敵の出現頻度
-        interval = max(60 - self.game.fall_speed * 10, 10)
-
         # 10秒経過?
         if game.play_time % (SEC_FPS * 10) == 0:
             # オブジェクトの落下速度を上げる
             game.fall_speed += 1
 
         # インターバル経過した?
-        if game.play_time % interval == 0:
+        if game.play_time % (50 - (game.level * 10)) == 0:
             # 落下物のインスタンスを生成
             FallObject(game, pyxel.rndi(0, pyxel.width - 16), pyxel.rndi(0, 3))
 
