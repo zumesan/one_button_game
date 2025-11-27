@@ -71,8 +71,9 @@ class GameOverScene:
     #                                                          #
     ############################################################
     def draw(self):
+        # 画面クリア
         pyxel.cls(0)
-        
+
         pyxel.text(
             (SCREEN_WIDTH - 8) / 2 - (len(PRESS_ENTER_KEY_TEXT) * 3 / 2) - 8,
             SCREEN_HEIGHT / 5 * 4,

@@ -85,6 +85,7 @@ class TitleScene:
     #                                                          #
     ############################################################
     def draw(self):
+        # 画面クリア
         pyxel.cls(0)
         """        
         pyxel.blt(
