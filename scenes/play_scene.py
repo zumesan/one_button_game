@@ -52,6 +52,9 @@ class PlayScene:
         # 経過時間ごとの難易度初期化
         self.game.fall_speed = 1
 
+        # インターバル初期化
+        self.interval = (50 - (self.game.level * 10))
+
 
     ############################################################
     #                                                          #
@@ -79,7 +82,7 @@ class PlayScene:
             game.fall_speed += 1
 
         # インターバル経過した?
-        if game.play_time % (50 - (game.level * 10)) == 0:
+        if game.play_time % (50 - self.interval) == 0:
             # 落下物のインスタンスを生成
             FallObject(game, pyxel.rndi(0, pyxel.width - 16), pyxel.rndi(0, 3))
 
