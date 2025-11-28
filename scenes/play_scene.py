@@ -114,6 +114,13 @@ class PlayScene:
 
         for fall in self.game.fall_objects:
             fall.draw()
+        
+        pyxel.text(
+            pyxel.width - 24,
+            8,
+            str(int(self.game.score)),
+            10
+        )
 
 # debug
         pyxel.text(

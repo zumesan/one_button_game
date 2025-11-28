@@ -75,6 +75,13 @@ class GameOverScene:
         pyxel.cls(0)
 
         pyxel.text(
+            (SCREEN_WIDTH - 8) / 2 - (len(str(self.game.score)) / 2),
+            SCREEN_HEIGHT / 5 * 3,
+            str(self.game.score),
+            7,
+        )
+
+        pyxel.text(
             (SCREEN_WIDTH - 8) / 2 - (len(PRESS_ENTER_KEY_TEXT) * 3 / 2) - 8,
             SCREEN_HEIGHT / 5 * 4,
             PRESS_ENTER_KEY_TEXT,

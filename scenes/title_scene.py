@@ -47,6 +47,8 @@ class TitleScene:
 
         game.play_time = 0
         game.level = 0
+        game.fall_speed = 0
+        game.score = 0
 
 
     ############################################################

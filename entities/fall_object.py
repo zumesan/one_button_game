@@ -12,6 +12,7 @@
 import pyxel
 
 from constants import RESOURCE_IMG_0, KIND_FLOWER, KIND_KNIFE, KIND_HAMMER, KIND_AXE
+from calc_score import calc_score
 
 class FallObject:
 
@@ -73,6 +74,7 @@ class FallObject:
         if self.y >= pyxel.height - 16:
             # 落下物がリストに存在する場合、リストから削除
             if self in self.game.fall_objects:
+                self.game.score += calc_score(self.kind + 1, self.game.level, self.fall_speed)
                 self.game.fall_objects.remove(self)
 
 

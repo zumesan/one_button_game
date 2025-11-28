@@ -46,6 +46,7 @@ class Game:
         self.play_time = 0   # ゲームのプレイ時間
         self.level = 0       # ゲームの難易度
         self.fall_speed = 0  # オブジェクトの落下速度
+        self.score = 0       # スコア
 
         self.scene_name = SCENE_TITLE
         self.change_scene(self.scene_name)
