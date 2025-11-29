@@ -10,7 +10,7 @@
 ############################################################
 
 import pyxel
-from constants import PRESS_ENTER_KEY_TEXT, SCREEN_WIDTH, SCREEN_HEIGHT, SCENE_TITLE
+from constants import PRESS_ENTER_KEY_TEXT, SCREEN_WIDTH, SCREEN_HEIGHT, SCENE_TITLE, RESOURCE_IMG_1
 
 class GameOverScene:
 
@@ -73,6 +73,17 @@ class GameOverScene:
     def draw(self):
         # 画面クリア
         pyxel.cls(0)
+
+        pyxel.blt(
+            (SCREEN_WIDTH - 8) / 2 - 56,
+            SCREEN_HEIGHT / 5,
+            RESOURCE_IMG_1,
+            0,
+            16,
+            56,
+            16,
+            0
+        )
 
         pyxel.text(
             (SCREEN_WIDTH - 8) / 2 - (len(str(self.game.score)) / 2),
