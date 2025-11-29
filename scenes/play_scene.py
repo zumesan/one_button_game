@@ -10,7 +10,10 @@
 ############################################################
 
 import pyxel
+
 from constants import SCREEN_WIDTH, SCREEN_HEIGHT, SCENE_GAME_OVER, SEC_FPS
+
+from calc_interval import calc_interval_initialize, calc_interval_change
 from collision import check_collision
 from entities import FallObject, Player
 
@@ -53,7 +56,7 @@ class PlayScene:
         self.game.fall_speed = 1
 
         # インターバル初期化
-        self.interval = max(60 - (self.game.level * 10), 10)
+        self.interval = calc_interval_initialize(self.game.level)
 
 
     ############################################################
@@ -80,6 +83,9 @@ class PlayScene:
         if game.play_time % (SEC_FPS * 10) == 0:
             # オブジェクトの落下速度を上げる
             game.fall_speed += 1
+
+            # 落下物の出現頻度を上げる
+            self.interval = calc_interval_change(self.interval, game.level)
 
         # インターバル経過した?
         if int(game.play_time % self.interval) == 0:
