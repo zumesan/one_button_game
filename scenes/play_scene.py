@@ -125,17 +125,8 @@ class PlayScene:
             fall.draw()
         
         pyxel.text(
-            pyxel.width - 24,
             8,
-            str(int(self.game.score)),
+            8,
+            "SCORE : {:0>8}".format(str(int(self.game.score))),
             10
         )
-
-# debug
-        pyxel.text(
-            8,
-            8,
-            str(int(self.game.play_time)),
-            10
-        )
-# debug
