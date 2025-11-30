@@ -44,6 +44,9 @@ class GameOverScene:
         self.game.player = None
         self.game.fall_objects = []
 
+        # ゲームオーバーの効果音再生
+        pyxel.play(0, 2)
+
 
     ############################################################
     #                                                          #

@@ -51,6 +51,10 @@ class Player:
 
         # スペースキーが押された?
         if pyxel.btnp(pyxel.KEY_SPACE):
+
+            # 方向転換の効果音再生
+            pyxel.play(0, 1)
+
             # 移動方向を変更
             self.direction *= -1
             self.dx = Player.MOVE_SPEED * self.direction

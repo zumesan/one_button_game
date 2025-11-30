@@ -50,6 +50,9 @@ class TitleScene:
         game.fall_speed = 0
         game.score = 0
 
+        # タイトル画面のBGM再生
+        pyxel.playm(0, loop=True)
+
 
     ############################################################
     #                                                          #
@@ -76,6 +79,10 @@ class TitleScene:
 
         if pyxel.btnp(pyxel.KEY_RETURN):
             self.game.level += 1
+
+            # BGMを止める
+            pyxel.stop()
+            
             game.change_scene(SCENE_PLAY)
 
 
