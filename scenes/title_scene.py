@@ -92,7 +92,7 @@ class TitleScene:
     def draw(self):
         # 画面クリア
         pyxel.cls(0)
-        """        
+        
         pyxel.blt(
             (SCREEN_WIDTH - 8) / 2 - 48,
             SCREEN_HEIGHT / 5,
@@ -103,7 +103,7 @@ class TitleScene:
             16,
             0
         )
-        """
+
 
         # 選択難易度表示
         pyxel.blt(

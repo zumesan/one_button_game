@@ -80,13 +80,13 @@ class GameOverScene:
             RESOURCE_IMG_1,
             0,
             16,
-            56,
+            112,
             16,
             0
         )
 
         pyxel.text(
-            (SCREEN_WIDTH - 8) / 2 - (len(str(self.game.score)) / 2),
+            (SCREEN_WIDTH - 8) / 2 - (len(str(self.game.score)) / 2) - 4,
             SCREEN_HEIGHT / 5 * 3,
             str(self.game.score),
             7,
