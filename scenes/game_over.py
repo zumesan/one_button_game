@@ -10,7 +10,7 @@
 ############################################################
 
 import pyxel
-from constants import PRESS_ENTER_KEY_TEXT, SCREEN_WIDTH, SCREEN_HEIGHT, SCENE_TITLE, RESOURCE_IMG_1
+from constants import PRESS_ENTER_KEY_CONTINUE, SCREEN_WIDTH, SCREEN_HEIGHT, SCENE_TITLE, RESOURCE_IMG_1
 
 class GameOverScene:
 
@@ -96,7 +96,7 @@ class GameOverScene:
         )
 
         pyxel.text(
-            (SCREEN_WIDTH - 8) / 2 - (len(PRESS_ENTER_KEY_TEXT) * 3 / 2) - 8,
+            (SCREEN_WIDTH - 8) / 2 - (len(PRESS_ENTER_KEY_CONTINUE) * 3 / 2) - 8,
             SCREEN_HEIGHT / 5 * 4,
             PRESS_ENTER_KEY_TEXT,
             7,
