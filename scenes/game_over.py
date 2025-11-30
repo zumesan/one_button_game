@@ -98,6 +98,6 @@ class GameOverScene:
         pyxel.text(
             (SCREEN_WIDTH - 8) / 2 - (len(PRESS_ENTER_KEY_CONTINUE) * 3 / 2) - 8,
             SCREEN_HEIGHT / 5 * 4,
-            PRESS_ENTER_KEY_TEXT,
+            PRESS_ENTER_KEY_CONTINUE,
             7,
         )
