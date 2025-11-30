@@ -9,7 +9,7 @@
 #                                                          #
 ############################################################
 import pyxel
-from constants import SCREEN_WIDTH, SCREEN_HEIGHT, RESOURCE_IMG_1, SCENE_PLAY, PRESS_ENTER_KEY_TEXT
+from constants import SCREEN_WIDTH, SCREEN_HEIGHT, RESOURCE_IMG_1, SCENE_PLAY, PRESS_ENTER_KEY_TEXT, PRESS_SPACE_KEY_SELECT_LEVEL
 
 class TitleScene:
 
@@ -82,7 +82,7 @@ class TitleScene:
 
             # BGMを止める
             pyxel.stop()
-            
+
             game.change_scene(SCENE_PLAY)
 
 
@@ -115,13 +115,20 @@ class TitleScene:
         # 選択難易度表示
         pyxel.blt(
             (SCREEN_WIDTH - 8) / 2 - 16,
-            SCREEN_HEIGHT / 5 * 3,
+            SCREEN_HEIGHT / 5 * 3 - 16,
             RESOURCE_IMG_1,
             0,
             self.game.level * 8 + 32,
             32,
             8,
             0
+        )
+
+        pyxel.text(
+            (SCREEN_WIDTH - 8) / 2 - (len(PRESS_SPACE_KEY_SELECT_LEVEL) * 3 / 2) - 8,
+            SCREEN_HEIGHT / 5 * 3,
+            PRESS_SPACE_KEY_SELECT_LEVEL,
+            7,
         )
 
         pyxel.text(
