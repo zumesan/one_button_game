@@ -11,7 +11,8 @@
 - pyxel
 
 ## 遊び方
-- 下記のURLにアクセスする。 https://kitao.github.io/pyxel/wasm/launcher/?play=zumesan.one_button_game.run.space_button_game
+- 下記のURLにアクセスする。<br>
+ https://kitao.github.io/pyxel/wasm/launcher/?play=zumesan.one_button_game.run.space_button_game
 
 ## 操作方法
 - SPACEキー：難易度変更、移動方向の変更
